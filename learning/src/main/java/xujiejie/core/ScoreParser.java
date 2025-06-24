@@ -89,7 +89,7 @@ public class ScoreParser {
      * 播放单个音符
      * @param note 音符对象
      */
-    private void playNote(Note note) {
+    void playNote(Note note) {
         int keyCode = KeyMapper.getKeyCode(note.getNoteChar());
         if (keyCode != -1) {
             robot.keyPress(keyCode);
@@ -102,7 +102,7 @@ public class ScoreParser {
      * 播放和弦
      * @param chord 和弦对象
      */
-    private void playChord(Chord chord) {
+    void playChord(Chord chord) {
         // 按下所有和弦音符
         for (Note note : chord.getNotes()) {
             int keyCode = KeyMapper.getKeyCode(note.getNoteChar());
