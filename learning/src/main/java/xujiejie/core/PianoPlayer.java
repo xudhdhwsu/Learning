@@ -11,8 +11,8 @@ import java.util.List;
  * 钢琴演奏器 - 使用Robot类模拟键盘事件演奏音符
  */
 public class PianoPlayer {
-    private final Robot robot;
-    private boolean isPlaying = false;
+    private Robot robot;
+    boolean isPlaying = false;
     private Thread playThread;
     
     public PianoPlayer() {
@@ -23,6 +23,10 @@ public class PianoPlayer {
         } catch (AWTException e) {
             throw new RuntimeException("无法创建Robot实例", e);
         }
+    }
+    
+    public PianoPlayer(Robot robot) {
+        this.robot = robot;
     }
     
     /**
@@ -144,7 +148,7 @@ public class PianoPlayer {
      * 精确延时（毫秒）
      * @param millis 毫秒数
      */
-    private void delay(long millis) {
+    void delay(long millis) {
         long start = System.currentTimeMillis();
         while (System.currentTimeMillis() - start < millis) {
             if (!isPlaying) break;
