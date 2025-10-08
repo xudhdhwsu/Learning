@@ -76,8 +76,8 @@ public class MultipleMoleculesSimulation {
     
     public static void main(String[] args) {
         /* 多个分子 */
-        int numMolecules = 10;
-        double simulationTime = 3 * Math.pow(10, 9)/* 秒 */;
+        int numMolecules = 2;
+        double simulationTime = 300 * Math.pow(10, 9)/* 秒 */;
         
         MultipleMoleculesSimulation simulation = new MultipleMoleculesSimulation(numMolecules, simulationTime);
         
